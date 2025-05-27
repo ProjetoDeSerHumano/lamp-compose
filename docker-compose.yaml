@@ -32,17 +32,17 @@ services:
       - lamb-network
     
   pgadmin:
-  image: dpage/pgadmin4
-  container_name: birazn-ifsp-pgadmin
-  environment:
-    PG_ADMIN_DEFAULT_EMAIL: postgres@servidor.com
-    PGADMIN_DEFAULT__PASSWORD: postdba
-  ports:
-    - 8081:80
-  depends_on:
-    - postgres
-  networks:
-    - lamp-network
+    image: dpage/pgadmin4
+    container_name: birazn-ifsp-pgadmin
+    environment:
+      PG_ADMIN_DEFAULT_EMAIL: postgres@servidor.com
+      PGADMIN_DEFAULT__PASSWORD: postdba
+    ports:
+      - 8081:80
+    depends_on:
+      - postgres
+    networks:
+      - lamp-network
 
   mysql:
     image: mysql:5.7
